@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "aksdev-8af5"
+    labels:
+        app: "aksdev-8af5"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: akhanapps-aksdev-8af5.92dcede920d440e189f5.centralus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "aksdev-8af5"
+                servicePort: 8080
