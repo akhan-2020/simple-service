@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "aksdev-8af5"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "aksdev-8af5"
+  template:
+    metadata:
+      labels:
+        app: "aksdev-8af5"
+    spec:
+      containers:
+        - name: "aksdev-8af5"
+          image: "akhandev2.azurecr.io/aksdev"
+          ports:
+          - containerPort: 8080
